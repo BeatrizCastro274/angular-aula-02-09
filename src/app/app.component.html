@@ -13,7 +13,7 @@
 </h3>
 <hr /> -->
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" class="mx-auto">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
       <h1>Contador: {{ counter }}s</h1>
@@ -22,26 +22,27 @@
       <h2>Rodadas: {{ rodada }}</h2>
     </li>
     <li class="list-group-item">
-      <div *ngIf="counter <= 20"><h3>Treine!</h3></div>
+      <div *ngIf="counter <= 20 && rodada < 8"><h3>Treine!</h3></div>
       <div *ngIf="counter > 20"><h3>Descanse!</h3></div>
+      <div *ngIf="counter <= 20 && rodada == 8">
+        <h3>
+          <div class="alert alert-success" role="alert">
+            <h3>Você terminou a série!</h3>
+            <span
+              ><button (click)="restartCounter()" class="btn btn-dark">
+                Reiniciar
+              </button></span
+            >
+          </div>
+        </h3>
+      </div>
     </li>
   </ul>
-</div>
-<div *ngIf="rodada == 8">
-  <div class="alert alert-success" role="alert">
-    <h3>Você terminou a série!</h3>
-    <span
-      ><button (click)="restartCounter()" class="btn btn-dark">
-        Reiniciar
-      </button></span
-    >
-  </div>
-</div>
 
-<!-- <div *ngFor="let n of [1, 5, 8, 22, 99, 54]">
+  <!-- <div *ngFor="let n of [1, 5, 8, 22, 99, 54]">
   {{ n }};
   <span *ngIf="n % 2 == 0"> PAR </span>
   <span *ngIf="n % 2 != 0"> IMPAR</span>
 </div>
 <h3>{{ getMinutos() }}'{{ getSegundos() }}''</h3>
--->
+--></div>

@@ -1,10 +1,24 @@
 <h1>Beatriz APP</h1>
 <hr />
 
+<!--
 <h2>
   Nome: <u>{{ name }}</u>
 </h2>
 <h3>
   Idade: <u>{{ getIdade() }}</u> anos.
 </h3>
-<hr />
+<hr /> -->
+<h2>Contador: {{ counter }}s</h2>
+<h3>Rodadas: {{ rodada }}</h3>
+
+<div *ngIf="counter < 20">Treine!</div>
+<div *ngIf=""></div>
+
+<!-- <div *ngFor="let n of [1, 5, 8, 22, 99, 54]">
+  {{ n }};
+  <span *ngIf="n % 2 == 0"> PAR </span>
+  <span *ngIf="n % 2 != 0"> IMPAR</span>
+</div>
+<h3>{{ getMinutos() }}'{{ getSegundos() }}''</h3>
+-->

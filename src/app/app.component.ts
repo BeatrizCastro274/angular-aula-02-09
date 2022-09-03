@@ -12,7 +12,6 @@ export class AppComponent {
   rodada = 0;
   timer = setInterval(() => {
     this.counter = this.counter + 1;
-
     if (this.rodada < 8) {
       if (this.counter > 30) {
         this.counter = 0;
@@ -21,7 +20,10 @@ export class AppComponent {
     } else this.counter = 0;
   }, 10);
 
-  getNumbers() {}
+  restartCounter() {
+    this.counter = 0;
+    this.rodada = 0;
+  }
 
   //getIdade() {
   //  return 2022 - this.nascimento;
